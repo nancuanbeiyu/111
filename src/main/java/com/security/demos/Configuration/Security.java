@@ -46,9 +46,9 @@ public class Security  implements UserDetailsService {
         if(account1==null){
               throw new UsernameNotFoundException("没有该账户");
         }
-//        这是一个关于 Spring Security 的方法，用于将逗号分隔的角色字符串转换为权限列表。
+//      给角色设置访问权限
         List<GrantedAuthority> authorities =
-                AuthorityUtils.commaSeparatedStringToAuthorityList("role");
+                AuthorityUtils.commaSeparatedStringToAuthorityList("one,ROLE_sale");
         //创建 user 并非 wed文件夹中User 返回
         return new User(account1.getAccount(),"{bcrypt}" +
                 new BCryptPasswordEncoder().encode(account1.getPassword()),authorities);

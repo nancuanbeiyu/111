@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface user  extends BaseMapper<account> {
 
-    @Select("select  * from account")
+    @Select("  select  * from account")
 List<account> selectList();
 
     @Select( "select * from account where  account=#{name}  ")

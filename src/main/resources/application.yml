@@ -10,4 +10,4 @@ spring:
 #      name: "122"
 #      password: "122"
 server:
-  port: 80
+  port: 8080
